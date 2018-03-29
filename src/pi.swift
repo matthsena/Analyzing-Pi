@@ -1,3 +1,5 @@
+import Foundation  
+
 // Declaração de variáveis e contantes globais
 let author: String = "Matheus Alexandre de Sena"
 var langText: String = "Select a language, type the respective number: \r\n1: PT - BR  \r\n2: EN - US" 
@@ -14,6 +16,9 @@ var length: Double = 0
 var radius: Double = 0
 var pi: Double = 0
 var arrayPi: [Double] = []
+var averagePi: Double = 0
+var n: Double = 0
+var stndDev: Double = 0
 
 // Funtion to chose a language
 func choseLang() -> Int {
@@ -129,6 +134,35 @@ for _ in 1...loopTimes {
 
     }
 
+    averagePi += pi
+
     arrayPi.append(pi)
-    print(arrayPi)
+    print("Pi = \(pi)")
+    
 }
+
+
+
+func stndDeviation(average: Double, num: Double, cont: Int) -> Double {
+    
+    let x: Int = cont - 1
+
+    for i:Int in 0...x {
+        stndDev = pow(arrayPi[i] - average, 2.0) + stndDev
+        stndDev = sqrt(stndDev / num)
+    }
+
+    return stndDev
+}
+
+
+n = Double(loopTimes)
+averagePi = averagePi / n
+
+stndDev =  stndDeviation(average: averagePi, num: n, cont: loopTimes)
+
+print("Media: \(averagePi)")
+
+print("Desvio: \(stndDev)")
+
+
