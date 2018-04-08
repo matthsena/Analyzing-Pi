@@ -1,4 +1,4 @@
-# Analyzing-Pi
+# Analyzing π
 
 ### Motivação:
 Com o intuito de despertar o lado cientifico das pessoas desenvolvi esse programa simples, o usuário irá necessitar fazer uma integração com o mundo real para execultar esse programa com maior taxa de sucesso, será necessário que ele meça o valor do comprimento e o raio de uma ou mais circunferências para determinar o valor de  π, a média e o desvio padrão. 
@@ -8,4 +8,4 @@ In order to awaken the scientific side of the people I've developed this simple 
 
 > π = c / 2r 
 
->**note:** c = l (lenght)
+**note:** c = l (lenght)
