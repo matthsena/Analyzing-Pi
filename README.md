@@ -24,7 +24,7 @@ Have Swift installed on your machine and any text editor, in my case I used the 
 
 ### Links úteis / Useful links
 
-***Swift**
+***Swift***
 
 <https://swift.org/download/>
 
