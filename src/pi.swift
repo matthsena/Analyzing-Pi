@@ -9,9 +9,12 @@ var procedure: String = ""
 var loopText: String = ""
 var inputLength: String = ""
 var inputRadius: String = ""
+var langAverage: String = "Average"
+var langStndDev: String = "Standard Deviation"
 
 var langSelected: Int
 var loopTimes: Int = 1
+
 var length: Double = 0
 var radius: Double = 0
 var pi: Double = 0
@@ -20,7 +23,7 @@ var averagePi: Double = 0
 var n: Double = 0
 var stndDev: Double = 0
 
-// Funtion to chose a language
+// Função para escolher a linguaguem
 func choseLang() -> Int {
     
     print(langText)
@@ -40,6 +43,7 @@ func choseLang() -> Int {
 
 langSelected = choseLang()
 
+// Validação do 'input' da linguagem
 while langSelected == 0 {
 
     print(invalidText)
@@ -56,18 +60,21 @@ if langSelected == 1 {
     invalidText = "Valor inválido !!"
     inputLength = "\nDigite o comprimento da circunferência(cm): "
     inputRadius = "\nDigite o valor do raio(cm): "
+    langAverage = "Média"
+    langStndDev = "Desvio padrão"
 } 
 // EN - US
 else if langSelected == 2 {
 
     motivation = "\nWelcome \nThis software had been created by \(author) to study about the number π"
-    procedure =  "\nProcedure: \nMeasure 'n' circles 'n' times, get the values of 'r' and 'l', so the"
+    procedure =  "\nProcedure: \nMeasure 'n' circumferences 'n' times, get the values of 'r' and 'l', so the"
     + " software will analise this datas, getting the average and standard deviation, π is equals c/2r"
-    loopText = "\nType the number of times that the circle had been measured"
-    inputLength = "\nType the length of circle(cm): "
+    loopText = "\nType the number of times that the circumferences had been measured"
+    inputLength = "\nType the length of circumference(cm): "
     inputRadius = "\nType the value of radius(cm): "
 }
 
+// Função para determinar quantas vezes o programa irá executar
 func loops() -> Int{
     
     print(loopText)
@@ -85,11 +92,13 @@ func loops() -> Int{
 
 loopTimes = loops()
 
+// Validação do 'input' dos loops
 while loopTimes == 0 {
     print(invalidText)
     loopTimes = loops()
 }
 
+// Função para obter o valor de pi
 for _ in 1...loopTimes {
 
     func mathPi() -> Double {
@@ -141,8 +150,7 @@ for _ in 1...loopTimes {
     
 }
 
-
-
+// função para calcular o desvio padrão
 func stndDeviation(average: Double, num: Double, cont: Int) -> Double {
     
     let x: Int = cont - 1
@@ -161,8 +169,7 @@ averagePi = averagePi / n
 
 stndDev =  stndDeviation(average: averagePi, num: n, cont: loopTimes)
 
-print("Media: \(averagePi)")
+// Saida de dados
+print("\(langAverage): \(averagePi)")
 
-print("Desvio: \(stndDev)")
-
-
+print("\(langStndDev): \(stndDev)")
